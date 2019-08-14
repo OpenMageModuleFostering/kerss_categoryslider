@@ -1,0 +1,43 @@
+<?xml version="1.0"?>   
+<layout>   
+    <categoryslider_index_index>   
+        <reference name="root">   
+            <action method="setTemplate">
+                <template>page/1column.phtml</template>
+            </action>   
+        </reference>   
+        <reference name="content">   
+            <block type="categoryslider/index" name="categoryslider_index" template="categoryslider/index.phtml" ifconfig="categorysection/categorygroup/enable" />
+        </reference>   
+    </categoryslider_index_index>   
+  
+    <catalog_category_view>
+        <reference name="head">
+            <action method="addItem" ifconfig="categorysection/categorygroup/enable">
+                <type>skin_css</type>
+                <name>css/categoryslider/devrama-slider.css</name>
+            </action>
+            <action method="addItem" ifconfig="categorysection/categorygroup/enablejq">
+                <type>skin_js</type>
+                <name>js/categoryslider/jquery.min.js</name>
+            </action>		
+            <action method="addItem" ifconfig="categorysection/categorygroup/enableconflictjs">
+                <type>skin_js</type>
+                <name>js/categoryslider/jquery.noconflict.js</name>
+            </action>		
+            <action method="addItem" ifconfig="categorysection/categorygroup/enable">
+                <type>skin_js</type>
+                <name>js/categoryslider/jquery.devrama.slider.js</name>
+            </action>		
+        </reference>
+        <reference name="content">
+            <block  type="categoryslider/index" name="categoryslider_top" before="_">
+                <action method="setTemplate" ifconfig="categorysection/categorygroup/enable">
+                    <template>categoryslider/index.phtml</template>
+                </action>
+            </block>
+        </reference>
+    </catalog_category_view>
+	
+</layout>   
+	

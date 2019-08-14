@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Kerss_Categoryslider>
+      <active>true</active>
+      <codePool>community</codePool>
+    </Kerss_Categoryslider>
+  </modules>
+</config>

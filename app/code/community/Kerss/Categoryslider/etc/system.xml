@@ -1,0 +1,304 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <categorytab translate="label" module="categoryslider">
+            <label>Kerss</label>
+            <sort_order>200</sort_order>
+        </categorytab>
+    </tabs>
+    <sections>
+        <categorysection  translate="label" module="categoryslider">                    
+            <label>Category Slider Setting</label>
+            <tab>categorytab</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>200</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>            
+            <groups>
+                <infogroup translate="label">
+                    <label>Product Information</label> 
+                    <frontend_type>text</frontend_type> 
+                    <comment>
+                        <![CDATA[
+                            <div style="padding:10px;background-color:#f8f8f8;border:1px solid #ddd;margin-bottom:7px;">
+                                Advanced Category Slider Extension v1.0.0 was developed by <a href="http://kersstech.com/" target="_blank">Kersstech</a>.
+                            </div>
+                            <ul>
+                                    <li><a href="http://www.kersstech.com/" target="_blank">Submit A Ticket</a></li>
+                            </ul>
+                            <br>
+                            <div style="font-size:11px">@Copyright: <i><a href="http://www.kersstech.com" target="_blank">Kersstech.com</a></i></div>
+                        ]]> 
+                    </comment>
+                    <sort_order>0</sort_order> 
+                    <show_in_default>1</show_in_default> 
+                    <show_in_website>1</show_in_website> 
+                    <show_in_store>1</show_in_store> 
+                </infogroup>
+
+                <categorygroup translate="label"> 
+                    <label>General</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enable translate="label">
+                            <label>Enable</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enable>
+                        <enablejq translate="label">
+                            <label>Include jquery.min.js</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enable>1</enable>
+                            </depends>
+                        </enablejq>
+                        <enableconflictjs translate="label">
+                            <label>Include jquery.noconflict.js</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <enable>1</enable>
+                            </depends>
+                        </enableconflictjs>
+                    </fields>
+                </categorygroup>
+                <categorydesign translate="label">
+                    <label>Slider Settings</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>20</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <imgwidth translate="label">
+                            <label>Width</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>eg. 1024</comment>
+                        </imgwidth>
+                        <imgheight translate="label">
+                            <label>Height</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>eg. 400</comment>
+                        </imgheight>
+                        <userCss translate="label">
+                            <label>Enable userCSS</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>If userCSS is enable,this will disable all native CSS of the slider. Then, you can decorate the slider with your own CSS.</comment>
+                        </userCss>
+                        <transitionspeed translate="label">
+                            <label>Slide Speed</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>7</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Transition effect time between slides in milliseconds.(eg. 2000)</comment>
+                        </transitionspeed>
+                        <duration translate="label">
+                            <label>Duration</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>8</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Time in milliseconds that the slide stays.(eg. 4000)</comment>
+                        </duration>
+                        <showNavigation translate="label">
+                            <label>Show Navigation</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>9</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Show/Hide navigation.</comment>
+                        </showNavigation>
+                        <navigationColor translate="label">
+                            <label>Navigation Color</label>
+                            <frontend_type>text</frontend_type>
+                            <validate>color</validate>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Navigation color in regular status.<br>
+							Default is #9F1F22 <span style="padding: 0 5px; background: #9F1F22;">&nbsp;</span>]]>
+                            </comment>
+                        </navigationColor>
+                        <navigationHoverColor translate="label">
+                            <label>Navigation Hover Color</label>
+                            <frontend_type>text</frontend_type>
+                            <validate>color</validate>
+                            <sort_order>11</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Navigation color in mouse over status.<br>
+							Default is #D52B2F <span style="padding: 0 5px; background: #D52B2F;">&nbsp;</span>]]>
+                            </comment>
+                        </navigationHoverColor>
+                        <navigationHighlightColor translate="label">
+                            <label>Navigation Highlight Color</label>
+                            <frontend_type>text</frontend_type>
+                            <validate>color</validate>
+                            <sort_order>12</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Navigation color when its slide is active.<br>
+							Default is #DFDFDF <span style="padding: 0 5px; background: #DFDFDF;">&nbsp;</span>]]>
+                            </comment>
+                        </navigationHighlightColor>
+                        <navigationNumberColor translate="label">
+                            <label>Navigation Number Color</label>
+                            <frontend_type>text</frontend_type>
+                            <validate>color</validate>
+                            <sort_order>13</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Navigation number text color.<br>
+							Default is #000000 <span style="padding: 0 5px; background: #000000;">&nbsp;</span>]]>
+                            </comment>
+                        </navigationNumberColor>
+                        <positionNavigation translate="label">
+                            <label>Navigation Position</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>categoryslider/options::positionnavigation</source_model>
+                            <sort_order>14</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </positionNavigation>
+                        <navigationType translate="label">
+                            <label>Navigation Type</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>categoryslider/options::navigationtype</source_model>
+                            <sort_order>15</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Navigation shape</comment>
+                        </navigationType>
+                        <showControl translate="label">
+                            <label>Show Control</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>16</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Show/Hide Previous-Next controls on hover.</comment>
+                        </showControl>
+                        <controlColor translate="label">
+                            <label>Control Color</label>
+                            <frontend_type>text</frontend_type>
+                            <validate>color</validate>
+                            <sort_order>17</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Next and Previous buttons arrow color.<br>
+							Default is #FFFFFF <span style="padding: 0 5px; background: #FFFFFF;">&nbsp;</span>]]>
+                            </comment>
+                        </controlColor>
+                        <controlBackgroundColor translate="label">
+                            <label>Control Background Color</label>
+                            <frontend_type>text</frontend_type>
+                            <validate>color</validate>
+                            <sort_order>18</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Next and Previous buttons background color.<br>
+							Default is #000000 <span style="padding: 0 5px; background: #000000;">&nbsp;</span>]]>
+                            </comment>
+                        </controlBackgroundColor>
+                        <positionControl translate="label">
+                            <label>Position Control</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>categoryslider/options::positioncontrol</source_model>
+                            <sort_order>19</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Positioning the control buttons.</comment>
+                        </positionControl>
+                        <transition translate="label">
+                            <label>Transition Effect</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>categoryslider/options::transitioneffect</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Transition effect between slides.</comment>
+                        </transition>
+                        <showProgress translate="label">
+                            <label>Show Progress</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>21</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Show/Hide progress bar.</comment>
+                        </showProgress>
+                        <progressColor translate="label">
+                            <label>Progress Color</label>
+                            <frontend_type>text</frontend_type>
+                            <validate>color</validate>
+                            <sort_order>22</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Progress bar color.<br>Default is #797979 <span style="padding: 0 5px; background: #797979;">&nbsp;</span>]]>
+                            </comment>
+                        </progressColor>
+                        <pauseOnHover translate="label">
+                            <label>Pause OnHover</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>23</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Pause when the mouse is on the slide.</comment>
+                        </pauseOnHover>
+                    </fields>
+                </categorydesign>
+            </groups>
+        </categorysection>
+    </sections>
+</config>
