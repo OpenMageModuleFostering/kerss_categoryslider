@@ -1,16 +1,5 @@
-<?xml version="1.0"?>   
-<layout>   
-    <categoryslider_index_index>   
-        <reference name="root">   
-            <action method="setTemplate">
-                <template>page/1column.phtml</template>
-            </action>   
-        </reference>   
-        <reference name="content">   
-            <block type="categoryslider/index" name="categoryslider_index" template="categoryslider/index.phtml" ifconfig="categorysection/categorygroup/enable" />
-        </reference>   
-    </categoryslider_index_index>   
-  
+<?xml version="1.0"?>
+<layout>
     <catalog_category_view>
         <reference name="head">
             <action method="addItem" ifconfig="categorysection/categorygroup/enable">
@@ -20,15 +9,15 @@
             <action method="addItem" ifconfig="categorysection/categorygroup/enablejq">
                 <type>skin_js</type>
                 <name>js/categoryslider/jquery.min.js</name>
-            </action>		
+            </action>
             <action method="addItem" ifconfig="categorysection/categorygroup/enableconflictjs">
                 <type>skin_js</type>
                 <name>js/categoryslider/jquery.noconflict.js</name>
-            </action>		
+            </action>
             <action method="addItem" ifconfig="categorysection/categorygroup/enable">
                 <type>skin_js</type>
                 <name>js/categoryslider/jquery.devrama.slider.js</name>
-            </action>		
+            </action>
         </reference>
         <reference name="content">
             <block  type="categoryslider/index" name="categoryslider_top" before="_">
@@ -38,6 +27,4 @@
             </block>
         </reference>
     </catalog_category_view>
-	
-</layout>   
-	
+</layout>

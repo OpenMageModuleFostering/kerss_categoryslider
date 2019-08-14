@@ -1,4 +1,12 @@
 <?php
+/**
+ * Kerss Infotech
+ * Kerss Category Banner Slider Magento Extension
+ *
+ * @category   Kerss
+ * @package    Kerss_Categoryslider
+ * @copyright  Copyright © 2015-2016 Kerss Infotech (http://kersstech.com/)
+ */
 $storeid = Mage::app()->getStore()->getStoreId();
 $sliderwidth = Mage::getStoreConfig('categorysection/categorydesign/imgwidth', $storeid);
 $sliderheight = Mage::getStoreConfig('categorysection/categorydesign/imgheight', $storeid);
@@ -45,9 +53,9 @@ $media_url = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
 
             <div data-lazy-background="<?php echo $imgurl; ?>" class="slide2 primary-img background active" style="display: block; position: absolute; top: 0%; left: 0%; width: <?php echo $sliderwidth . 'px'; ?>; height: <?php echo $sliderheight . 'px'; ?>;">
                 <?php if ($showurl) { ?>
-                <a href="<?php echo $url; ?>" target="<?php echo $target; ?>">
+                    <a href="<?php echo $url; ?>" target="<?php echo $target; ?>">
                     <?php } ?>
-                        <img class="lazy-background" alt="<?php echo $alttext; ?>" title="<?php echo $title; ?>" src="<?php echo $imgurl; ?>" style="top: 0px; left: 0px; width: 100%; height: 100%; z-index: -1;">
+                    <img class="lazy-background" alt="<?php echo $alttext; ?>" title="<?php echo $title; ?>" src="<?php echo $imgurl; ?>" style="top: 0px; left: 0px; width: 100%; height: 100%; z-index: -1;">
                     <?php if ($showurl) { ?>
                     </a>
                 <?php } ?>
@@ -64,7 +72,7 @@ $media_url = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
 
 
     <script type="text/javascript">
-        jQuery(document).ready(function(){
+        jQuery(document).ready(function () {
             jQuery('#my-slide').DrSlider({
                 width: '<?php echo $sliderwidth ?>',
                 height: '<?php echo $sliderheight ?>',

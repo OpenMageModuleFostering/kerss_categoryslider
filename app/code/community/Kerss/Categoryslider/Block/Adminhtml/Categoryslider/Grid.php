@@ -1,5 +1,13 @@
 <?php
 
+/**
+ * Kerss Infotech
+ * Kerss Category Banner Slider Magento Extension
+ *
+ * @category   Kerss
+ * @package    Kerss_Categoryslider
+ * @copyright  Copyright © 2015-2016 Kerss Infotech (http://kersstech.com/)
+ */
 class Kerss_Categoryslider_Block_Adminhtml_Categoryslider_Grid extends Mage_Adminhtml_Block_Widget_Grid {
 
     public function __construct() {
@@ -76,11 +84,11 @@ class Kerss_Categoryslider_Block_Adminhtml_Categoryslider_Grid extends Mage_Admi
         $this->getMassactionBlock()->setUseSelectAll(true);
         $this->getMassactionBlock()->addItem('remove_categoryslider', array(
             'label' => Mage::helper('categoryslider')->__('Delete'),
-            'url' => $this->getUrl('*/adminhtml_categoryslider/massRemove'),
+            'url' => $this->getUrl('*/*/massRemove'),
             'confirm' => Mage::helper('categoryslider')->__('Are you sure?')
         ));
         $statuses = Mage::getSingleton('categoryslider/status')->getOptionArray();
-        
+
         //array_unshift($statuses, array('label' => '', 'value' => ''));
         $this->getMassactionBlock()->addItem('status', array(
             'label' => Mage::helper('categoryslider')->__('Change status'),

@@ -1,5 +1,13 @@
 <?php
 
+/**
+ * Kerss Infotech
+ * Kerss Category Banner Slider Magento Extension
+ *
+ * @category   Kerss
+ * @package    Kerss_Categoryslider
+ * @copyright  Copyright © 2015-2016 Kerss Infotech (http://kersstech.com/)
+ */
 class Kerss_Categoryslider_Model_Options {
 
     public function positionNavigation() {
@@ -19,7 +27,7 @@ class Kerss_Categoryslider_Model_Options {
         );
         return $options;
     }
-    
+
     public function navigationType() {
         $options = array(
             'number' => Mage::helper('categoryslider')->__('Number'),
@@ -28,7 +36,7 @@ class Kerss_Categoryslider_Model_Options {
         );
         return $options;
     }
-    
+
     public function positionControl() {
         $options = array(
             'left-right' => Mage::helper('categoryslider')->__('left-right'),
@@ -41,7 +49,7 @@ class Kerss_Categoryslider_Model_Options {
         );
         return $options;
     }
-    
+
     public function transitionEffect() {
         $options = array(
             'random' => Mage::helper('categoryslider')->__('random'),
@@ -60,4 +68,5 @@ class Kerss_Categoryslider_Model_Options {
         );
         return $options;
     }
+
 }

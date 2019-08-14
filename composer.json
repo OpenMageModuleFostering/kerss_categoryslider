@@ -3,7 +3,7 @@
     "type": "magento-module",
     "license": "OSL-v3.0",
     "homepage": "",
-    "description": "This extension allows you to display different banner slider category wise on category page",
+    "description": "This extension allows you to display different banner slider category wise on category page.",
     "authors": [
     {
         "name": "Kalpesh Sakhareliya",

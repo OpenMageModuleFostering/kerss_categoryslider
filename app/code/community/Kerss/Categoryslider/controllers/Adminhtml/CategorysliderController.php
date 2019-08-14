@@ -1,24 +1,32 @@
 <?php
 
+/**
+ * Kerss Infotech
+ * Kerss Category Banner Slider Magento Extension
+ *
+ * @category   Kerss
+ * @package    Kerss_Categoryslider
+ * @copyright  Copyright © 2015-2016 Kerss Infotech (http://kersstech.com/)
+ */
 class Kerss_Categoryslider_Adminhtml_CategorysliderController extends Mage_Adminhtml_Controller_Action {
 
     protected function _initAction() {
-        $this->loadLayout()->_setActiveMenu("categoryslider/categoryslider")->_addBreadcrumb(Mage::helper("adminhtml")->__("Categoryslider  Manager"), Mage::helper("adminhtml")->__("Categoryslider Manager"));
+        $this->loadLayout()->_setActiveMenu("categoryslider/categoryslider")->_addBreadcrumb(Mage::helper("adminhtml")->__("Categoryslider  Manager"), Mage::helper("adminhtml")->__("Category Slider Manager"));
         return $this;
     }
 
     public function indexAction() {
-        $this->_title($this->__("Categoryslider"));
-        $this->_title($this->__("Manager Categoryslider"));
+        $this->_title($this->__("Category Slider"));
+        $this->_title($this->__("Category Slider Manager"));
 
         $this->_initAction();
         $this->renderLayout();
     }
 
     public function editAction() {
-        $this->_title($this->__("Categoryslider"));
-        $this->_title($this->__("Categoryslider"));
-        $this->_title($this->__("Edit Item"));
+        $this->_title($this->__("Category Slider"));
+        $this->_title($this->__("Category Slider"));
+        $this->_title($this->__("Edit Banner"));
 
         $id = $this->getRequest()->getParam("id");
         $model = Mage::getModel("categoryslider/categoryslider")->load($id);
@@ -26,13 +34,13 @@ class Kerss_Categoryslider_Adminhtml_CategorysliderController extends Mage_Admin
             Mage::register("categoryslider_data", $model);
             $this->loadLayout();
             $this->_setActiveMenu("categoryslider/categoryslider");
-            $this->_addBreadcrumb(Mage::helper("adminhtml")->__("Categoryslider Manager"), Mage::helper("adminhtml")->__("Categoryslider Manager"));
-            $this->_addBreadcrumb(Mage::helper("adminhtml")->__("Categoryslider Description"), Mage::helper("adminhtml")->__("Categoryslider Description"));
+            $this->_addBreadcrumb(Mage::helper("adminhtml")->__("Categoryslider Manager"), Mage::helper("adminhtml")->__("Category Slider Manager"));
+            $this->_addBreadcrumb(Mage::helper("adminhtml")->__("Categoryslider Description"), Mage::helper("adminhtml")->__("Category Slider Description"));
             $this->getLayout()->getBlock("head")->setCanLoadExtJs(true);
             $this->_addContent($this->getLayout()->createBlock("categoryslider/adminhtml_categoryslider_edit"))->_addLeft($this->getLayout()->createBlock("categoryslider/adminhtml_categoryslider_edit_tabs"));
             $this->renderLayout();
         } else {
-            Mage::getSingleton("adminhtml/session")->addError(Mage::helper("categoryslider")->__("Item does not exist."));
+            Mage::getSingleton("adminhtml/session")->addError(Mage::helper("categoryslider")->__("Banner does not exist."));
             $this->_redirect("*/*/");
         }
     }
@@ -41,7 +49,7 @@ class Kerss_Categoryslider_Adminhtml_CategorysliderController extends Mage_Admin
 
         $this->_title($this->__("Categoryslider"));
         $this->_title($this->__("Categoryslider"));
-        $this->_title($this->__("New Item"));
+        $this->_title($this->__("New Banner"));
 
         $id = $this->getRequest()->getParam("id");
         $model = Mage::getModel("categoryslider/categoryslider")->load($id);
@@ -58,8 +66,8 @@ class Kerss_Categoryslider_Adminhtml_CategorysliderController extends Mage_Admin
 
         $this->getLayout()->getBlock("head")->setCanLoadExtJs(true);
 
-        $this->_addBreadcrumb(Mage::helper("adminhtml")->__("Categoryslider Manager"), Mage::helper("adminhtml")->__("Categoryslider Manager"));
-        $this->_addBreadcrumb(Mage::helper("adminhtml")->__("Categoryslider Description"), Mage::helper("adminhtml")->__("Categoryslider Description"));
+        $this->_addBreadcrumb(Mage::helper("adminhtml")->__("Category Slider Manager"), Mage::helper("adminhtml")->__("Category Slider Manager"));
+        $this->_addBreadcrumb(Mage::helper("adminhtml")->__("Category Slider Description"), Mage::helper("adminhtml")->__("Category Slider Description"));
 
 
         $this->_addContent($this->getLayout()->createBlock("categoryslider/adminhtml_categoryslider_edit"))->_addLeft($this->getLayout()->createBlock("categoryslider/adminhtml_categoryslider_edit_tabs"));
@@ -111,7 +119,7 @@ class Kerss_Categoryslider_Adminhtml_CategorysliderController extends Mage_Admin
                         ->setId($this->getRequest()->getParam("id"))
                         ->save();
 
-                Mage::getSingleton("adminhtml/session")->addSuccess(Mage::helper("adminhtml")->__("Categoryslider was successfully saved"));
+                Mage::getSingleton("adminhtml/session")->addSuccess(Mage::helper("adminhtml")->__("Banner was successfully saved"));
                 Mage::getSingleton("adminhtml/session")->setCategorysliderData(false);
 
                 if ($this->getRequest()->getParam("back")) {
@@ -135,7 +143,7 @@ class Kerss_Categoryslider_Adminhtml_CategorysliderController extends Mage_Admin
             try {
                 $model = Mage::getModel("categoryslider/categoryslider");
                 $model->setId($this->getRequest()->getParam("id"))->delete();
-                Mage::getSingleton("adminhtml/session")->addSuccess(Mage::helper("adminhtml")->__("Item was successfully deleted"));
+                Mage::getSingleton("adminhtml/session")->addSuccess(Mage::helper("adminhtml")->__("Banner was successfully deleted"));
                 $this->_redirect("*/*/");
             } catch (Exception $e) {
                 Mage::getSingleton("adminhtml/session")->addError($e->getMessage());
@@ -152,29 +160,28 @@ class Kerss_Categoryslider_Adminhtml_CategorysliderController extends Mage_Admin
                 $model = Mage::getModel("categoryslider/categoryslider");
                 $model->setId($id)->delete();
             }
-            Mage::getSingleton("adminhtml/session")->addSuccess(Mage::helper("adminhtml")->__("Item(s) was successfully removed"));
+            Mage::getSingleton("adminhtml/session")->addSuccess(Mage::helper("adminhtml")->__("Banner(s) was successfully removed"));
         } catch (Exception $e) {
             Mage::getSingleton("adminhtml/session")->addError($e->getMessage());
         }
         $this->_redirect('*/*/');
     }
 
-    public function massStatusAction()
-    {
+    public function massStatusAction() {
         $ids = $this->getRequest()->getParam('slider_ids');
-        if(!is_array($ids)) {
-            Mage::getSingleton('adminhtml/session')->addError($this->__('Please select item(s)'));
+        if (!is_array($ids)) {
+            Mage::getSingleton('adminhtml/session')->addError($this->__('Please select banner(s)'));
         } else {
             try {
                 foreach ($ids as $id) {
                     $model = Mage::getSingleton('categoryslider/categoryslider')
-                        ->load($id)
-                        ->setStatus($this->getRequest()->getParam('status'))
-                        ->setIsMassupdate(true)
-                        ->save();
+                            ->load($id)
+                            ->setStatus($this->getRequest()->getParam('status'))
+                            ->setIsMassupdate(true)
+                            ->save();
                 }
                 $this->_getSession()->addSuccess(
-                    $this->__('Total of %d record(s) were successfully updated', count($ids))
+                        $this->__('Total of %d record(s) were successfully updated', count($ids))
                 );
             } catch (Exception $e) {
                 $this->_getSession()->addError($e->getMessage());
@@ -182,7 +189,7 @@ class Kerss_Categoryslider_Adminhtml_CategorysliderController extends Mage_Admin
         }
         $this->_redirect('*/*/');
     }
-    
+
     /**
      * Export order grid to CSV format
      */
@@ -199,6 +206,10 @@ class Kerss_Categoryslider_Adminhtml_CategorysliderController extends Mage_Admin
         $fileName = 'categoryslider.xml';
         $grid = $this->getLayout()->createBlock('categoryslider/adminhtml_categoryslider_grid');
         $this->_prepareDownloadResponse($fileName, $grid->getExcelFile($fileName));
+    }
+
+    protected function _isAllowed() {
+        return true;
     }
 
 }

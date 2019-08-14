@@ -1,7 +1,16 @@
 <?php
+
+/**
+ * Kerss Infotech
+ * Kerss Category Banner Slider Magento Extension
+ *
+ * @category   Kerss
+ * @package    Kerss_Categoryslider
+ * @copyright  Copyright © 2015-2016 Kerss Infotech (http://kersstech.com/)
+ */
 $installer = $this;
 $installer->startSetup();
-$sql=<<<SQLTEXT
+$sql = <<<SQLTEXT
 create table categoryslider(
 slider_id int not null auto_increment,
 title varchar(100),
@@ -19,8 +28,4 @@ primary key(slider_id));
 SQLTEXT;
 
 $installer->run($sql);
-//demo 
-//Mage::getModel('core/url_rewrite')->setId(null);
-//demo 
 $installer->endSetup();
-	 

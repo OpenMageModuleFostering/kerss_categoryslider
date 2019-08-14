@@ -1,5 +1,13 @@
 <?php
 
+/**
+ * Kerss Infotech
+ * Kerss Category Banner Slider Magento Extension
+ *
+ * @category   Kerss
+ * @package    Kerss_Categoryslider
+ * @copyright  Copyright © 2015-2016 Kerss Infotech (http://kersstech.com/)
+ */
 class Kerss_Categoryslider_Block_Adminhtml_Categoryslider_Edit extends Mage_Adminhtml_Block_Widget_Form_Container {
 
     protected function _prepareLayout() {
@@ -15,8 +23,8 @@ class Kerss_Categoryslider_Block_Adminhtml_Categoryslider_Edit extends Mage_Admi
         $this->_objectId = "slider_id";
         $this->_blockGroup = "categoryslider";
         $this->_controller = "adminhtml_categoryslider";
-        $this->_updateButton("save", "label", Mage::helper("categoryslider")->__("Save Item"));
-        $this->_updateButton("delete", "label", Mage::helper("categoryslider")->__("Delete Item"));
+        $this->_updateButton("save", "label", Mage::helper("categoryslider")->__("Save Banner"));
+        $this->_updateButton("delete", "label", Mage::helper("categoryslider")->__("Delete Banner"));
 
         $this->_addButton("saveandcontinue", array(
             "label" => Mage::helper("categoryslider")->__("Save And Continue Edit"),
@@ -37,10 +45,10 @@ class Kerss_Categoryslider_Block_Adminhtml_Categoryslider_Edit extends Mage_Admi
     public function getHeaderText() {
         if (Mage::registry("categoryslider_data") && Mage::registry("categoryslider_data")->getId()) {
 
-            return Mage::helper("categoryslider")->__("Edit Item '%s'", $this->htmlEscape(Mage::registry("categoryslider_data")->getId()));
+            return Mage::helper("categoryslider")->__("Edit Banner '%s'", $this->htmlEscape(Mage::registry("categoryslider_data")->getTitle()));
         } else {
 
-            return Mage::helper("categoryslider")->__("Add Item");
+            return Mage::helper("categoryslider")->__("Add Banner");
         }
     }
 

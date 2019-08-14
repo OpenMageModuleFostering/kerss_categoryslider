@@ -41,7 +41,7 @@
             </categoryslider>
             <categoryslider_mysql4>
                 <class>Kerss_Categoryslider_Model_Mysql4</class>
-                <entities>		  
+                <entities>
                     <categoryslider>
                         <table>categoryslider</table>
                     </categoryslider>
@@ -75,26 +75,33 @@
                 <use>admin</use>
                 <args>
                     <module>Kerss_Categoryslider</module>
-                    <frontName>admin_categoryslider</frontName>
+                    <frontName>categoryslider</frontName>
                 </args>
             </categoryslider>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Kerss_Categoryslider after="Mage_Adminhtml">Kerss_Categoryslider_Adminhtml</Kerss_Categoryslider>
+                    </modules>
+                </args>
+            </adminhtml>
         </routers>
     </admin>
     <adminhtml>
         <menu>
             <categoryslider module="categoryslider">
-                <title>Categoryslider</title>
-                <sort_order>100</sort_order>
+                <title>Kerss Tech</title>
+                <sort_order>110</sort_order>
                 <children>
                     <categoryslider module="categoryslider">
                         <title>Manage Categoryslider</title>
                         <sort_order>10</sort_order>
-                        <action>admin_categoryslider/adminhtml_categoryslider</action>
+                        <action>adminhtml/categoryslider</action>
                     </categoryslider>
                     <settings module="categoryslider">
                         <title>Settings</title>
                         <sort_order>20</sort_order>
-                        <action>adminhtml/system_config/edit/section/categorysection</action> 
+                        <action>adminhtml/system_config/edit/section/categorysection</action>
                     </settings>
                 </children>
             </categoryslider>
@@ -112,8 +119,12 @@
                             <children>
                                 <categoryslider translate="title">
                                     <title>Manage Categoryslider</title>
-                                    <sort_order>0</sort_order>
+                                    <sort_order>10</sort_order>
                                 </categoryslider>
+                                <settings translate="title">
+                                    <title>Settings</title>
+                                    <sort_order>20</sort_order>
+                                </settings>
                             </children>
                         </categoryslider>
                     </children>
@@ -159,4 +170,4 @@
             </categorydesign>
         </categorysection>
     </default>
-</config> 
+</config>
