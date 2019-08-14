@@ -20,8 +20,25 @@ class Kerss_Categoryslider_Block_Adminhtml_Categoryslider_Grid extends Mage_Admi
 
     protected function _prepareCollection() {
         $collection = Mage::getModel("categoryslider/categoryslider")->getCollection();
+        $collection->addFieldToSelect('*');
         $this->setCollection($collection);
         return parent::_prepareCollection();
+    }
+    
+    public function callback_image($value)
+    {
+	$width = 130;
+	return "<img src='".Mage::getBaseUrl('media').$value."' width=".$width.">";
+    }
+    
+    public function callback_category($value)
+    {
+    	$categoryId = explode(',', $value);
+    	$categoryData = array();
+        foreach ($categoryId as $key => $catData) {
+            $category = Mage::getModel('catalog/category')->load($catData);
+            echo $categoryData[] = $category->getName() . '<br />';
+        }
     }
 
     protected function _prepareColumns() {
@@ -38,8 +55,7 @@ class Kerss_Categoryslider_Block_Adminhtml_Categoryslider_Grid extends Mage_Admi
             'width' => '100px',
             'type' => 'image',
             'index' => 'image',
-            'renderer' => 'categoryslider/adminhtml_categoryslider_renderer_image',
-            'style' => 'text-align:center'
+            'frame_callback' => array($this, 'callback_image')
         ));
 
         $this->addColumn("title", array(
@@ -51,7 +67,7 @@ class Kerss_Categoryslider_Block_Adminhtml_Categoryslider_Grid extends Mage_Admi
         $this->addColumn("category_id", array(
             "header" => Mage::helper("categoryslider")->__("Category"),
             "index" => "category_id",
-            "renderer" => "categoryslider/adminhtml_categoryslider_renderer_category",
+            "frame_callback" => array($this, "callback_category"),
             "width" => "250px",
         ));
 
