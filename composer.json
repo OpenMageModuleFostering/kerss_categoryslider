@@ -1,7 +1,7 @@
 {
-    "name": "OpenMageModuleFostering\/Kerss_Categoryslider",
+    "name": "openmage-module-fostering\/kerss_categoryslider",
     "type": "magento-module",
-    "license": "OSL-v3.0",
+    "license": "OSL-3.0",
     "homepage": "",
     "description": "This extension allows you to display different banner slider category wise on category page.",
     "authors": [
